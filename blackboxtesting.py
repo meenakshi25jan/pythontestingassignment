@@ -1,6 +1,6 @@
 
 import unittest
-from BeautifulTestsoup import *
+from BeautifulSoup import *
 
 class TestB4Testsoup(unittest.TestCase):
 
