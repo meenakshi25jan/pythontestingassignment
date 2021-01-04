@@ -30,6 +30,21 @@ class FollowThatTag(TestB4Testsoup):
         self.assertEqual(match[0].name, 'a')
         self.assertEqual(match, self.testsoup.findAll('a'))
         self.assertEqual(match, self.testsoup.findAll(TestsoupStrainer('a')))
+ def testTagunwrap(self):
+    markupppp = '<a href="https://w3.com/">Java.<i>w3.com</i></a>'
+   testedsoupex   = BeautifulSoup(markupppp, "lxml")
+   aa_tag = soup.aa
+   print("markup:")
+   print(aa_tag)
+   aa_tag.i.unwrap()
+   print("\nAfter unwrapping:")
+   print(aa_tag)
+
+
+        b = testedsoupex   .b
+        self.assertEqual(aa_tag, b)
+        self.assertEqual(aa_tag, b)
+
 
     def testFindAllByAttribute(self):
         match = self.testsoup.findAll(id='x')
@@ -403,6 +418,17 @@ class CodeWriteOnly(TestB4Testtestsoup):
        self.assertEqual(str(testtestsoup),
                         "<p>Don't talk me .</p> "
                         "<p>Don't talk me.<b>here</b></p>")
+     def testwrap(self):
+
+	xxxhtml = open("s.html").read()
+	souptest = BeautifulSoup(xxxhtml)
+	new_bb = soup.new_taggg('b')
+	new_bbbb=soup.p.wrap(new_bb)
+	print soup.prettify()
+
+       
+        self.assertEquals(BeautifulTestsoup(new_bbbb)., new_bbbb)
+
 
     def testTagExtraction(self):
         # A very simple case
